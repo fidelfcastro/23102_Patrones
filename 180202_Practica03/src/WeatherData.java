@@ -5,12 +5,9 @@ import java.util.List;
  * Created by fidel on 2/2/2018.
  */
 public class WeatherData implements Subject {
-    private List<Observer> observerList;
+    private List<Observer> observerList = new ArrayList<>();
     double temperature, humidity, pressure;
 
-    public WeatherData(){
-        observerList = new ArrayList<>();
-    }
     @Override
     public void add(Observer observer) {
         observerList.add(observer);
