@@ -1,15 +1,15 @@
-import java.util.Date;
 import java.util.Observable;
 
 public class EmailsMxData extends Observable {
     double cost, time;
+    boolean change;
 
     public void providerChanged(double cost, double time) {
         this.cost = cost;
         this.time = time;
 
         setChanged();
-        boolean change = hasChanged();
+        change = hasChanged();
         if (change) {
             try {
                 Thread.sleep(10 * 1000);

@@ -1,15 +1,15 @@
-import java.util.Date;
 import java.util.Observable;
 
 public class DhlData extends Observable{
     double weight, height;
+    boolean change;
 
     public void providerChanged(double weight, double height){
         this.weight = weight;
         this.height = height;
 
         setChanged();
-        boolean change = hasChanged();
+        change = hasChanged();
         if(change){
             try {
                 Thread.sleep(5 * 1000);
@@ -20,9 +20,6 @@ public class DhlData extends Observable{
                 e.printStackTrace();
             }
         }
-
-
-
     }
 
     public double getWeight() {
