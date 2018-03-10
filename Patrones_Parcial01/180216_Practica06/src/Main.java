@@ -9,3 +9,5 @@ public class Main {
 
     }
 }
+//Decorator Pattern
+//Mas funcionalidad = extender
