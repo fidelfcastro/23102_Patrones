@@ -11,6 +11,7 @@ public class FanHigh implements Command{
 
     @Override
     public void undo() {
-
+        System.out.print("Undo button: ");
+        fan.medium();
     }
 }

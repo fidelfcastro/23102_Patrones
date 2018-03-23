@@ -1,3 +1,5 @@
+import java.util.Queue;
+
 public class FanOff implements Command{
     Fan fan;
 
@@ -11,6 +13,7 @@ public class FanOff implements Command{
 
     @Override
     public void undo() {
-
+        System.out.print("Undo button: ");
+        fan.high();
     }
 }

@@ -11,6 +11,7 @@ public class WasherMachineOn implements Command {
 
     @Override
     public void undo() {
-
+        System.out.print("Undo button: ");
+        washerMachine.off();
     }
 }

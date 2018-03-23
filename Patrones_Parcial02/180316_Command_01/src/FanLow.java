@@ -1,5 +1,6 @@
 public class FanLow implements Command {
     Fan fan;
+
     public FanLow(Fan fan){
         this.fan = fan;
     }
@@ -10,6 +11,7 @@ public class FanLow implements Command {
 
     @Override
     public void undo() {
-
+        System.out.print("Undo button: ");
+        fan.off();
     }
 }
