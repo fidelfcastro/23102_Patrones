@@ -1,5 +1,3 @@
-import java.util.Queue;
-
 public class FanOff implements Command{
     Fan fan;
 

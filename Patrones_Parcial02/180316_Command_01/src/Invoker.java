@@ -1,22 +1,28 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Invoker {
-    Map<Integer, Command> slots = new HashMap<>();
-    Command slot;
+    Map<Integer, List<Command>> slotsMap = new HashMap<>();
+    List<Command> commandList = new ArrayList<>();
+    Stack<Command> stack = new Stack<>();
 
     public void setCommand(Command command, int index){
-        slots.put(index,command);
+        commandList.add(command);
+        slotsMap.put(index,commandList);
     }
 
-    public void pressButton(int index){
-        slot = slots.get(index);
-        slot.execute();
+    public void pressButton(int index, Command command){
+        List<Command> commands;
+        commands = slotsMap.get(index);
+        for(Command slot : commands){
+            if(slot == command){
+                slot.execute();
+                stack.add(slot);
+            }
+        }
     }
 
     public void undoButton(){
-        slot.undo();
+        Command undoButton = stack.pop();
+        undoButton.undo();
     }
 }

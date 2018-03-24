@@ -1,5 +1,4 @@
 public class Fan {
-
     public void off(){
         System.out.println("Fan OFF");
     }
